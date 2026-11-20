@@ -1,0 +1,13 @@
+{
+  "name": "grok-bot-mcp-cdp",
+  "version": "0.1.0",
+  "private": true,
+  "description": "MCP server that lets Claude Code and other MCP clients talk to Grok Bot agents by driving the Grok Bot app over the Chrome DevTools Protocol. Works with the desktop app or headless on Linux.",
+  "license": "MIT",
+  "repository": { "type": "git", "url": "git+https://github.com/respp/grok-bot-mcp-cdp.git" },
+  "homepage": "https://github.com/respp/grok-bot-mcp-cdp#readme",
+  "keywords": ["mcp", "model-context-protocol", "grok-bot", "cdp", "claude-code"],
+  "type": "module",
+  "bin": { "grok-bot-mcp-cdp": "src/index.js" },
+  "engines": { "node": ">=22" }
+}

@@ -1,0 +1,4 @@
+#!/bin/sh
+# Fake browser for the headless Grok Bot app: logs every URL the app tries to open
+# (for example the sign-in link) so you can open it in your own browser.
+printf '%s %s\n' "$(date -Is)" "$*" >> /home/grokbot/opened-urls.log

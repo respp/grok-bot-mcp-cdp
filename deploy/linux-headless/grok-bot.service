@@ -1,0 +1,19 @@
+[Unit]
+Description=Grok Bot app (headless, CDP on 127.0.0.1:9333)
+Requires=grok-bot-xvfb.service
+After=grok-bot-xvfb.service network-online.target
+
+[Service]
+User=grokbot
+WorkingDirectory=/home/grokbot
+Environment=DISPLAY=:77
+Environment=BROWSER=/usr/local/bin/grokbot-capture-url
+Environment=HOME=/home/grokbot
+ExecStartPre=/bin/sleep 2
+# CDP must listen on 127.0.0.1 only: whoever reaches this port controls the logged-in account.
+ExecStart="/opt/Grok Bot/grok-bot" --remote-debugging-address=127.0.0.1 --remote-debugging-port=9333 --password-store=basic
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target

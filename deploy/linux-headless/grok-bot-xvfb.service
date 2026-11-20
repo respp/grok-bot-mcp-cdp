@@ -1,0 +1,10 @@
+[Unit]
+Description=Xvfb :77 for headless Grok Bot
+
+[Service]
+User=grokbot
+ExecStart=/usr/bin/Xvfb :77 -screen 0 1400x900x24 -nolisten tcp
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
